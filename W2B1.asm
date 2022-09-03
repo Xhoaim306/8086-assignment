@@ -2,30 +2,18 @@
 mov ah,1
 int 21h      
 
-mov bl,al   ; number 1      
-int 21h
-              
-mov bh,al   
-sub bx, 3030h    
+sub al,30h  ; number 1      
+mov dl,al  
 
-add  bh,bl
-mov ax, 0000h
- 
-mov al, bh   
-mov bl,10
-div bl  
-
-mov bl,al
-mov bh,ah
-
-add bx,3030h
-
-mov ah,02h
-mov dl,bl
+mov ah,1  
 int 21h
 
-mov dl, bh
+sub al,30h ; number 2
+add dl,al
+
+;convert number to character
+          
+add dl,30h
+mov ah,2
 int 21h
-
-
 
